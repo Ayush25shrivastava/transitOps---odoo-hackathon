@@ -59,6 +59,7 @@ const driverSchema = new mongoose.Schema(
       trim: true,
       maxlength: [500, "Notes cannot exceed 500 characters"],
     },
+    // Aggregate stats
     totalTrips: {
       type: Number,
       default: 0,
@@ -75,10 +76,12 @@ const driverSchema = new mongoose.Schema(
   }
 );
 
+// ─── Virtual: Is license expired ──────────────────────────────────────────────
 driverSchema.virtual("isLicenseExpired").get(function () {
   return this.licenseExpiry < new Date();
 });
 
+// ─── Virtual: Is eligible for dispatch ───────────────────────────────────────
 driverSchema.virtual("isEligibleForDispatch").get(function () {
   return (
     this.status === "Available" &&
@@ -87,6 +90,7 @@ driverSchema.virtual("isEligibleForDispatch").get(function () {
   );
 });
 
+// ─── Indexes ──────────────────────────────────────────────────────────────────
 driverSchema.index({ licenseNumber: 1 });
 driverSchema.index({ status: 1 });
 driverSchema.index({ licenseExpiry: 1 });
