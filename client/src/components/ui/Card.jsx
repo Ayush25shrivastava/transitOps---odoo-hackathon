@@ -3,7 +3,7 @@ import React from 'react';
 const Card = React.forwardRef(({ className = '', children, ...props }, ref) => (
   <div
     ref={ref}
-    className={`rounded-xl border border-border bg-color-bg-card shadow-sm hover:shadow-md transition-shadow duration-300 ${className}`}
+    className={`rounded-xl border border-border bg-[var(--color-bg-card)] shadow-sm hover:shadow-lg hover-scale transition-all duration-300 ${className}`}
     {...props}
   >
     {children}

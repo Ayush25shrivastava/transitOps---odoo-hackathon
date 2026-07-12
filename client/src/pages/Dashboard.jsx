@@ -25,7 +25,7 @@ const StatCard = ({ title, value, borderClass }) => (
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
     className="h-full"
   >
-    <Card className={`border-l-4 ${borderClass} h-full bg-gradient-to-br from-white to-slate-50`}>
+    <Card className={`border-l-4 ${borderClass} h-full bg-[var(--color-bg-card)]`}>
       <CardContent className="p-5 flex flex-col justify-between h-full">
         <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">{title}</p>
         <h3 className="text-3xl font-light text-text-primary tracking-tight">{value}</h3>
@@ -122,7 +122,7 @@ const Dashboard = () => {
             <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4">Recent Trips</h3>
             <Card className="overflow-hidden">
               <Table>
-                <TableHeader className="bg-slate-50">
+                <TableHeader className="bg-[var(--color-bg-base)]">
                   <TableRow>
                     <TableHead>Trip</TableHead>
                     <TableHead>Vehicle</TableHead>
@@ -132,28 +132,28 @@ const Dashboard = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow className="hover:bg-slate-50 transition-colors">
+                  <TableRow className="hover:bg-[var(--color-bg-base)] transition-colors hover-scale">
                     <TableCell className="font-medium text-primary">TR001</TableCell>
                     <TableCell>VAN-05</TableCell>
                     <TableCell>Alex</TableCell>
                     <TableCell><StatusBadge status="On Trip" /></TableCell>
                     <TableCell>45 min</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-slate-50 transition-colors">
+                  <TableRow className="hover:bg-[var(--color-bg-base)] transition-colors hover-scale">
                     <TableCell className="font-medium text-primary">TR002</TableCell>
                     <TableCell>TRK-12</TableCell>
                     <TableCell>John</TableCell>
                     <TableCell><StatusBadge status="Completed" /></TableCell>
                     <TableCell className="text-text-secondary">—</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-slate-50 transition-colors">
+                  <TableRow className="hover:bg-[var(--color-bg-base)] transition-colors hover-scale">
                     <TableCell className="font-medium text-primary">TR003</TableCell>
                     <TableCell>MINI-08</TableCell>
                     <TableCell>Priya</TableCell>
                     <TableCell><StatusBadge status="Dispatched" /></TableCell>
                     <TableCell>1h 10m</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-slate-50 transition-colors">
+                  <TableRow className="hover:bg-[var(--color-bg-base)] transition-colors hover-scale">
                     <TableCell className="font-medium text-text-secondary">TR004</TableCell>
                     <TableCell className="text-text-secondary">—</TableCell>
                     <TableCell className="text-text-secondary">—</TableCell>
@@ -176,7 +176,7 @@ const Dashboard = () => {
                   <span className="text-sm font-semibold text-text-primary">Available</span>
                   <span className="text-sm font-bold text-success">42</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-3">
+                <div className="w-full bg-[var(--color-border)] rounded-full h-3">
                   <motion.div initial={{ width: 0 }} animate={{ width: '75%' }} transition={{ duration: 1, delay: 0.5 }} className="bg-success h-3 rounded-full"></motion.div>
                 </div>
               </div>
@@ -185,7 +185,7 @@ const Dashboard = () => {
                   <span className="text-sm font-semibold text-text-primary">On Trip</span>
                   <span className="text-sm font-bold text-info">18</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-3">
+                <div className="w-full bg-[var(--color-border)] rounded-full h-3">
                   <motion.div initial={{ width: 0 }} animate={{ width: '30%' }} transition={{ duration: 1, delay: 0.6 }} className="bg-info h-3 rounded-full"></motion.div>
                 </div>
               </div>
@@ -194,7 +194,7 @@ const Dashboard = () => {
                   <span className="text-sm font-semibold text-text-primary">In Shop</span>
                   <span className="text-sm font-bold text-warning">5</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-3">
+                <div className="w-full bg-[var(--color-border)] rounded-full h-3">
                   <motion.div initial={{ width: 0 }} animate={{ width: '10%' }} transition={{ duration: 1, delay: 0.7 }} className="bg-warning h-3 rounded-full"></motion.div>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const Dashboard = () => {
                   <span className="text-sm font-semibold text-text-primary">Retired</span>
                   <span className="text-sm font-bold text-danger">2</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-3">
+                <div className="w-full bg-[var(--color-border)] rounded-full h-3">
                   <motion.div initial={{ width: 0 }} animate={{ width: '5%' }} transition={{ duration: 1, delay: 0.8 }} className="bg-danger h-3 rounded-full"></motion.div>
                 </div>
               </div>

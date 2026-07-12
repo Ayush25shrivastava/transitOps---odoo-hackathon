@@ -29,7 +29,7 @@ export default function Sidebar() {
   if (!sidebarOpen) return null;
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-color-bg-sidebar border-r border-border flex flex-col z-40">
+    <aside className="fixed left-0 top-0 h-full w-64 bg-color-bg-sidebar border-r border-border flex flex-col z-40 fade-in">
       {/* Logo */}
       <div className="p-6">
         <div className="flex items-center gap-3">
@@ -48,8 +48,8 @@ export default function Sidebar() {
             className={({ isActive }) =>
               `flex items-center gap-4 px-3 py-2.5 rounded-lg transition-all duration-200 group relative ${
                 isActive
-                  ? 'bg-transparent text-primary border border-primary/20'
-                  : 'text-text-secondary hover:text-text-primary hover:bg-white'
+                  ? 'bg-transparent text-primary border border-primary/20 hover-glow'
+                  : 'text-text-secondary hover:text-text-primary hover:bg-[var(--color-border)] hover-scale'
               }`
             }
           >
@@ -59,7 +59,7 @@ export default function Sidebar() {
       </nav>
 
       {/* User section */}
-      <div className="p-4 border-t border-border bg-white mt-auto">
+      <div className="p-4 border-t border-border bg-color-bg-sidebar mt-auto">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">
@@ -75,7 +75,7 @@ export default function Sidebar() {
         </div>
         <button
           onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-secondary hover:text-danger hover:bg-danger/10 transition-all duration-200 text-sm font-medium"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-secondary hover:text-danger hover:bg-danger/10 hover-scale transition-all duration-200 text-sm font-medium"
         >
           <LogOut size={16} />
           Sign Out

@@ -14,7 +14,7 @@ const COLORS = ['#3b82f6', '#f59e0b', '#10b981', '#ef4444'];
 
 const Reports = () => {
   return (
-    <div className="p-8 w-full min-h-screen bg-gray-900 text-gray-100">
+    <div className="w-full space-y-6 fade-in">
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-white flex items-center">
@@ -33,9 +33,9 @@ const Reports = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gray-800 p-6 rounded-xl border border-gray-700"
+          className="bg-[var(--color-bg-card)] p-6 rounded-xl border border-border hover-scale transition-all duration-300"
         >
-          <h2 className="text-xl font-semibold mb-6 text-white">Expense Breakdown</h2>
+          <h2 className="text-xl font-semibold mb-6 text-text-primary">Expense Breakdown</h2>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -51,8 +51,8 @@ const Reports = () => {
                   ))}
                 </Pie>
                 <RechartsTooltip 
-                  contentStyle={{ backgroundColor: '#1f2937', border: 'none', borderRadius: '0.5rem' }}
-                  itemStyle={{ color: '#e5e7eb' }}
+                  contentStyle={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', borderRadius: '0.5rem' }}
+                  itemStyle={{ color: 'var(--color-text-primary)' }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -61,7 +61,7 @@ const Reports = () => {
             {data.map((entry, index) => (
               <div key={entry.name} className="flex items-center">
                 <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: COLORS[index] }}></div>
-                <span className="text-gray-300">{entry.name}</span>
+                <span className="text-text-secondary">{entry.name}</span>
               </div>
             ))}
           </div>
@@ -71,14 +71,14 @@ const Reports = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col justify-center items-center text-center"
+          className="bg-[var(--color-bg-card)] p-6 rounded-xl border border-border flex flex-col justify-center items-center text-center hover-scale transition-all duration-300"
         >
            <div className="p-4 bg-emerald-500/10 rounded-full mb-4">
              <TrendingUp className="w-12 h-12 text-emerald-400" />
            </div>
-           <h3 className="text-2xl font-bold text-white mb-2">Efficiency Score: 94%</h3>
-           <p className="text-gray-400">Your fleet is operating at high efficiency compared to last quarter.</p>
-           <button className="mt-6 px-4 py-2 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition-colors">
+            <h3 className="text-2xl font-bold text-text-primary mb-2">Efficiency Score: 94%</h3>
+            <p className="text-text-secondary">Your fleet is operating at high efficiency compared to last quarter.</p>
+            <button className="mt-6 px-4 py-2 border border-border rounded-lg text-text-secondary hover:bg-[var(--color-border)] hover:text-text-primary transition-colors hover-scale">
              View Detailed Metrics
            </button>
         </motion.div>

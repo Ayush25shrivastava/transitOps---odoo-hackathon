@@ -7,9 +7,9 @@ const Button = React.forwardRef(
     
     const variants = {
       primary: "bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary",
-      secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-gray-500",
-      outline: "border border-border hover:bg-gray-100 focus-visible:ring-gray-500 text-text-primary",
-      ghost: "hover:bg-gray-100 text-text-secondary hover:text-text-primary",
+      secondary: "bg-[var(--color-border)] text-text-primary hover:bg-gray-700 focus-visible:ring-gray-500",
+      outline: "border border-border hover:bg-[var(--color-border)] focus-visible:ring-gray-500 text-text-primary",
+      ghost: "hover:bg-[var(--color-border)] text-text-secondary hover:text-text-primary",
       danger: "bg-danger text-white hover:bg-red-600 focus-visible:ring-danger",
     };
 

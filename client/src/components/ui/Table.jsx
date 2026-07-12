@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Table = React.forwardRef(({ className = '', ...props }, ref) => (
-  <div className="w-full overflow-auto rounded-lg border border-border bg-white shadow-sm">
+  <div className="w-full overflow-auto rounded-lg border border-border bg-[var(--color-bg-card)] shadow-sm hover-scale transition-all duration-300">
     <table
       ref={ref}
       className={`w-full caption-bottom text-sm ${className}`}
@@ -12,7 +12,7 @@ const Table = React.forwardRef(({ className = '', ...props }, ref) => (
 Table.displayName = "Table";
 
 const TableHeader = React.forwardRef(({ className = '', ...props }, ref) => (
-  <thead ref={ref} className={`border-b bg-gray-50/50 ${className}`} {...props} />
+  <thead ref={ref} className={`border-b border-border bg-[var(--color-bg-base)]/50 ${className}`} {...props} />
 ));
 TableHeader.displayName = "TableHeader";
 
@@ -28,7 +28,7 @@ TableBody.displayName = "TableBody";
 const TableRow = React.forwardRef(({ className = '', ...props }, ref) => (
   <tr
     ref={ref}
-    className={`border-b transition-colors hover:bg-gray-50/50 data-[state=selected]:bg-gray-50 ${className}`}
+    className={`border-b border-border transition-colors hover:bg-[var(--color-bg-base)] data-[state=selected]:bg-[var(--color-bg-base)] ${className}`}
     {...props}
   />
 ));

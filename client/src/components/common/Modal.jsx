@@ -25,14 +25,14 @@ export default function Modal({ isOpen, onClose, title, children, size = 'md' })
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: 'spring', duration: 0.3 }}
-            className={`relative w-full ${sizeClasses[size]} bg-[#1F2937] rounded-2xl border border-[#374151] shadow-2xl`}
+            className={`relative w-full ${sizeClasses[size]} bg-[var(--color-bg-card)] rounded-2xl border border-border shadow-2xl`}
             onClick={e => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-6 border-b border-[#374151]">
-              <h2 className="text-lg font-bold text-[#F9FAFB]">{title}</h2>
+            <div className="flex items-center justify-between p-6 border-b border-border">
+              <h2 className="text-lg font-bold text-text-primary">{title}</h2>
               <button
                 onClick={onClose}
-                className="p-2 rounded-lg text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#374151] transition-colors"
+                className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-[var(--color-border)] transition-colors hover-scale"
               >
                 <X size={18} />
               </button>

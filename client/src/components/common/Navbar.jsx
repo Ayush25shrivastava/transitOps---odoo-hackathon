@@ -24,16 +24,16 @@ export default function Navbar() {
   const title = pageTitles[location.pathname] || 'TransitOps';
 
   return (
-    <header className="sticky top-0 z-30 h-16 bg-white border-b border-border flex items-center justify-between px-6">
+    <header className="sticky top-0 z-30 h-16 bg-color-bg-sidebar border-b border-border flex items-center justify-between px-6 fade-in">
       <div className="flex items-center gap-4">
         <button
           onClick={toggleSidebar}
-          className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-gray-100 transition-colors md:hidden"
+          className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-[var(--color-border)] hover-scale transition-colors md:hidden"
         >
           <Menu size={20} />
         </button>
         <div className="hidden md:block w-96">
-          <Input placeholder="Search..." className="bg-gray-50 border-transparent focus:border-primary focus:bg-white transition-colors" />
+          <Input placeholder="Search..." className="bg-[var(--color-bg-base)] border-transparent text-text-primary focus:border-primary focus:bg-[var(--color-bg-sidebar)] transition-colors hover-glow" />
         </div>
       </div>
 
