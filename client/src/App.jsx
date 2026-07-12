@@ -6,8 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Vehicles from './pages/Vehicles';
 import Drivers from './pages/Drivers';
-import Trips from './pages/Trips';
-import TripNew from './pages/TripNew';
+import TripDispatcher from './pages/Trips';
 import Maintenance from './pages/Maintenance';
 import FuelExpenses from './pages/FuelExpenses';
 import Reports from './pages/Reports';
@@ -34,8 +33,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/drivers" element={<Drivers />} />
-        <Route path="/trips" element={<Trips />} />
-        <Route path="/trips/new" element={<TripNew />} />
+        <Route path="/trips" element={<TripDispatcher />} />
         <Route path="/maintenance" element={<Maintenance />} />
         <Route path="/fuel-expenses" element={<FuelExpenses />} />
         <Route path="/reports" element={<Reports />} />
