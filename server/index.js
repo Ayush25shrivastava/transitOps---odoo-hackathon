@@ -63,6 +63,7 @@ app.use((req, res) => {
 // Error Handler Middleware (MUST be at the end)
 app.use(errorHandler);
 
+// Cron Job
 cron.schedule("0 8 * * *", async () => {
   console.log("[CRON] Checking for expiring driver licenses...");
   try {
@@ -72,7 +73,7 @@ cron.schedule("0 8 * * *", async () => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => {
   console.log(`\n🚀 TransitOps Server running on port ${PORT}`);
   console.log(`   Environment : ${process.env.NODE_ENV || "development"}`);
