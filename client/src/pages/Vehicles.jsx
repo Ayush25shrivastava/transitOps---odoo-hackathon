@@ -37,7 +37,7 @@ const Vehicles = () => {
       </div>
       
       {/* Action Bar */}
-      <Card className="bg-slate-50 border-none shadow-sm">
+      <Card className="bg-[var(--color-bg-card)] border-none shadow-sm hover-scale transition-all duration-300">
         <CardContent className="p-4 flex gap-4">
           <div className="w-48">
             <Select>
@@ -71,7 +71,7 @@ const Vehicles = () => {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
         <Card className="overflow-hidden shadow-sm">
           <Table>
-            <TableHeader className="bg-slate-50 border-b border-border">
+            <TableHeader className="bg-[var(--color-bg-base)] border-b border-border">
               <TableRow>
                 <TableHead className="py-4 px-6 text-xs font-semibold text-text-secondary uppercase">Reg. No. (Unique)</TableHead>
                 <TableHead className="py-4 px-6 text-xs font-semibold text-text-secondary uppercase">Name/Mode</TableHead>
@@ -84,7 +84,7 @@ const Vehicles = () => {
             </TableHeader>
             <TableBody>
               {mockVehicles.map((vehicle, idx) => (
-                <TableRow key={vehicle.regNo} className="hover:bg-slate-50 transition-colors border-b border-border last:border-0">
+                <TableRow key={vehicle.regNo} className="hover:bg-[var(--color-bg-base)] transition-colors border-b border-border last:border-0 hover-scale">
                   <TableCell className="font-medium text-primary py-4 px-6">{vehicle.regNo}</TableCell>
                   <TableCell className="py-4 px-6 text-text-primary">{vehicle.name}</TableCell>
                   <TableCell className="py-4 px-6 text-text-secondary">{vehicle.type}</TableCell>

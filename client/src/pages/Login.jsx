@@ -17,7 +17,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-color-bg-base flex">
       {/* Left Panel - Dark Gradient */}
       <div className="hidden lg:flex lg:w-2/5 bg-gradient-to-br from-slate-900 via-primary-dark to-slate-900 flex-col justify-between p-16 text-white relative overflow-hidden">
         {/* Abstract Background Element */}
@@ -56,13 +56,13 @@ const Login = () => {
       </div>
 
       {/* Right Panel - Login Form */}
-      <div className="flex-1 flex flex-col justify-center items-center p-8 bg-slate-50 relative">
+      <div className="flex-1 flex flex-col justify-center items-center p-8 bg-[var(--color-bg-base)] relative">
         <div className="w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="bg-white p-10 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100"
+            className="bg-[var(--color-bg-card)] p-10 rounded-2xl shadow-xl border border-[var(--color-border)]"
           >
             <div className="mb-10 text-center">
               <h2 className="text-3xl font-bold text-text-primary mb-3 tracking-tight">Welcome back</h2>
@@ -78,7 +78,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="raven.k@transitops.in"
-                  className="bg-slate-50 border-slate-200 focus:bg-white transition-colors"
+                  className="bg-[var(--color-bg-base)] border-border focus:bg-[var(--color-bg-sidebar)] transition-colors"
                 />
               </div>
               
@@ -90,13 +90,13 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="bg-slate-50 border-slate-200 focus:bg-white transition-colors"
+                  className="bg-[var(--color-bg-base)] border-border focus:bg-[var(--color-bg-sidebar)] transition-colors"
                 />
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Role (RBAC Simulation)</label>
-                <Select value={role} onChange={(e) => setRole(e.target.value)} className="bg-slate-50 border-slate-200 focus:bg-white transition-colors">
+                <Select value={role} onChange={(e) => setRole(e.target.value)} className="bg-[var(--color-bg-base)] border-border focus:bg-[var(--color-bg-sidebar)] transition-colors">
                   <option value="Fleet Manager">Fleet Manager</option>
                   <option value="Dispatcher">Dispatcher</option>
                   <option value="Safety Officer">Safety Officer</option>

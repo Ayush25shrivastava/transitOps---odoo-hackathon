@@ -10,7 +10,7 @@ const mockMaintenance = [
 
 const Maintenance = () => {
   return (
-    <div className="p-8 w-full min-h-screen bg-gray-900 text-gray-100">
+    <div className="w-full space-y-6 fade-in">
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-white flex items-center">
@@ -25,22 +25,22 @@ const Maintenance = () => {
         </button>
       </div>
 
-      <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
-        <div className="p-4 border-b border-gray-700 flex justify-between items-center bg-gray-800">
-          <h2 className="text-xl font-semibold text-white">Maintenance Log</h2>
-          <button className="p-2 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors">
+      <div className="bg-[var(--color-bg-card)] rounded-xl border border-border overflow-hidden shadow-sm hover-scale transition-all duration-300">
+        <div className="p-4 border-b border-border flex justify-between items-center bg-[var(--color-bg-card)]">
+          <h2 className="text-xl font-semibold text-text-primary">Maintenance Log</h2>
+          <button className="p-2 bg-[var(--color-bg-base)] border border-border rounded-lg hover:border-gray-500 transition-colors hover-scale">
             <Filter className="w-5 h-5 text-gray-400" />
           </button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-900/50">
-                <th className="p-4 font-semibold text-gray-400 border-b border-gray-700">Vehicle</th>
-                <th className="p-4 font-semibold text-gray-400 border-b border-gray-700">Type</th>
-                <th className="p-4 font-semibold text-gray-400 border-b border-gray-700">Status</th>
-                <th className="p-4 font-semibold text-gray-400 border-b border-gray-700">Date</th>
-                <th className="p-4 font-semibold text-gray-400 border-b border-gray-700">Est. Cost</th>
+              <tr className="bg-[var(--color-bg-base)]/50">
+                <th className="p-4 font-semibold text-text-secondary border-b border-border">Vehicle</th>
+                <th className="p-4 font-semibold text-text-secondary border-b border-border">Type</th>
+                <th className="p-4 font-semibold text-text-secondary border-b border-border">Status</th>
+                <th className="p-4 font-semibold text-text-secondary border-b border-border">Date</th>
+                <th className="p-4 font-semibold text-text-secondary border-b border-border">Est. Cost</th>
               </tr>
             </thead>
             <tbody>
@@ -50,10 +50,10 @@ const Maintenance = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="border-b border-gray-700 hover:bg-gray-750 transition-colors"
+                  className="border-b border-border hover:bg-[var(--color-bg-base)] transition-colors hover-scale"
                 >
-                  <td className="p-4 font-medium text-white">{record.vehicle}</td>
-                  <td className="p-4 text-gray-300">{record.type}</td>
+                  <td className="p-4 font-medium text-text-primary">{record.vehicle}</td>
+                  <td className="p-4 text-text-secondary">{record.type}</td>
                   <td className="p-4">
                     <span className={`flex items-center px-3 py-1 rounded-full text-xs font-medium w-fit ${
                       record.status === 'Completed' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
@@ -65,8 +65,8 @@ const Maintenance = () => {
                       {record.status}
                     </span>
                   </td>
-                  <td className="p-4 text-gray-300">{record.date}</td>
-                  <td className="p-4 font-medium text-gray-300">{record.cost}</td>
+                  <td className="p-4 text-text-secondary">{record.date}</td>
+                  <td className="p-4 font-medium text-text-primary">{record.cost}</td>
                 </motion.tr>
               ))}
             </tbody>

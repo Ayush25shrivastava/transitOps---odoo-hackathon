@@ -37,7 +37,7 @@ const Drivers = () => {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
         <Card className="overflow-hidden shadow-sm">
           <Table>
-            <TableHeader className="bg-slate-50 border-b border-border">
+            <TableHeader className="bg-[var(--color-bg-base)] border-b border-border">
               <TableRow>
                 <TableHead className="py-4 px-6 text-xs font-semibold text-text-secondary uppercase">Driver</TableHead>
                 <TableHead className="py-4 px-6 text-xs font-semibold text-text-secondary uppercase">License No.</TableHead>
@@ -51,7 +51,7 @@ const Drivers = () => {
             </TableHeader>
             <TableBody>
               {mockDrivers.map((driver) => (
-                <TableRow key={driver.id} className="hover:bg-slate-50 transition-colors border-b border-border last:border-0">
+                <TableRow key={driver.id} className="hover:bg-[var(--color-bg-base)] transition-colors border-b border-border last:border-0 hover-scale">
                   <TableCell className="font-medium text-primary py-4 px-6">{driver.name}</TableCell>
                   <TableCell className="py-4 px-6 text-text-primary">{driver.license}</TableCell>
                   <TableCell className="py-4 px-6 text-text-secondary">{driver.category}</TableCell>
@@ -73,7 +73,7 @@ const Drivers = () => {
         <div className="flex gap-3">
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-5 py-2 rounded-full text-sm font-medium bg-success-light text-success-dark border border-success/20 hover:bg-success hover:text-white transition-colors">Available</motion.button>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-5 py-2 rounded-full text-sm font-medium bg-info-light text-info-dark border border-info/20 hover:bg-info hover:text-white transition-colors">On Trip</motion.button>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-5 py-2 rounded-full text-sm font-medium bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-600 hover:text-white transition-colors">Off Duty</motion.button>
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-5 py-2 rounded-full text-sm font-medium bg-[var(--color-bg-base)] text-text-primary border border-border hover:bg-[var(--color-border)] hover:text-white transition-colors">Off Duty</motion.button>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-5 py-2 rounded-full text-sm font-medium bg-warning-light text-warning-dark border border-warning/20 hover:bg-warning hover:text-white transition-colors">Suspended</motion.button>
         </div>
       </motion.div>

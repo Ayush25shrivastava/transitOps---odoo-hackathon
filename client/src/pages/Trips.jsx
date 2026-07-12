@@ -74,15 +74,15 @@ const TripDispatcher = () => {
                 <div className="grid grid-cols-2 gap-5">
                   <div className="col-span-2">
                     <label className="block text-xs font-medium text-text-secondary mb-1">Customer / Project</label>
-                    <Input placeholder="Enter customer name..." className="bg-slate-50 border-slate-200" />
+                    <Input placeholder="Enter customer name..." className="bg-[var(--color-bg-base)] border-border" />
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Pickup Location</label>
-                    <Input placeholder="Origin" className="bg-slate-50 border-slate-200" />
+                    <Input placeholder="Origin" className="bg-[var(--color-bg-base)] border-border" />
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Drop Location</label>
-                    <Input placeholder="Destination" className="bg-slate-50 border-slate-200" />
+                    <Input placeholder="Destination" className="bg-[var(--color-bg-base)] border-border" />
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Date & Time</label>
@@ -90,7 +90,7 @@ const TripDispatcher = () => {
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Cargo Details / Weight</label>
-                    <Input placeholder="e.g. 500kg Electronics" className="bg-slate-50 border-slate-200" />
+                    <Input placeholder="e.g. 500kg Electronics" className="bg-[var(--color-bg-base)] border-border" />
                   </div>
                 </div>
               </div>
@@ -100,14 +100,14 @@ const TripDispatcher = () => {
                 <div className="grid grid-cols-1 gap-5">
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Assign Vehicle (Auto-filtered)</label>
-                    <Select className="bg-slate-50 border-slate-200">
+                    <Select className="bg-[var(--color-bg-base)] border-border">
                       <option>Select available vehicle...</option>
                       <option>VAN-05 (GJ01AB4521)</option>
                     </Select>
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-text-secondary mb-1">Assign Driver (Auto-filtered)</label>
-                    <Select className="bg-slate-50 border-slate-200">
+                    <Select className="bg-[var(--color-bg-base)] border-border">
                       <option>Select available driver...</option>
                       <option>Alex (DL-88213)</option>
                     </Select>
@@ -131,7 +131,7 @@ const TripDispatcher = () => {
             
             {/* Trip Card 1 */}
             <motion.div variants={itemVariants} whileHover={{ y: -4 }}>
-              <Card className="border-l-4 border-info shadow-sm hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-white to-slate-50">
+              <Card className="border-l-4 border-info shadow-sm hover:shadow-md hover-scale transition-all cursor-pointer bg-[var(--color-bg-card)]">
                 <CardContent className="p-5 flex flex-col gap-4">
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-text-primary text-lg">TRP-001 <span className="text-text-secondary font-medium text-sm ml-2">Acme Corp</span></span>
@@ -141,7 +141,7 @@ const TripDispatcher = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-info mr-3"></span>
                     Warehouse A <span className="text-slate-300 mx-3">→</span> Site B
                   </div>
-                  <div className="flex justify-between text-xs font-medium text-text-secondary bg-white border border-slate-100 shadow-sm p-3 rounded-lg">
+                  <div className="flex justify-between text-xs font-medium text-text-secondary bg-[var(--color-bg-base)] border border-border shadow-sm p-3 rounded-lg">
                     <span>Veh: <span className="text-text-primary">TRUCK-11</span></span>
                     <span>Driver: <span className="text-text-primary">John</span></span>
                     <span className="text-info-dark">ETA: 2h 15m</span>
@@ -152,7 +152,7 @@ const TripDispatcher = () => {
 
             {/* Trip Card 2 */}
             <motion.div variants={itemVariants} whileHover={{ y: -4 }}>
-              <Card className="border-l-4 border-warning shadow-sm hover:shadow-md transition-all cursor-pointer bg-gradient-to-r from-white to-slate-50">
+              <Card className="border-l-4 border-warning shadow-sm hover:shadow-md hover-scale transition-all cursor-pointer bg-[var(--color-bg-card)]">
                 <CardContent className="p-5 flex flex-col gap-4">
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-text-primary text-lg">TRP-002 <span className="text-text-secondary font-medium text-sm ml-2">BuildIt Inc</span></span>
@@ -162,7 +162,7 @@ const TripDispatcher = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-warning mr-3"></span>
                     Port <span className="text-slate-300 mx-3">→</span> Factory 1
                   </div>
-                  <div className="flex justify-between text-xs font-medium text-text-secondary bg-white border border-slate-100 shadow-sm p-3 rounded-lg">
+                  <div className="flex justify-between text-xs font-medium text-text-secondary bg-[var(--color-bg-base)] border border-border shadow-sm p-3 rounded-lg">
                     <span>Veh: <span className="text-text-primary">VAN-05</span></span>
                     <span>Driver: <span className="text-text-primary">Priya</span></span>
                     <span className="text-danger flex items-center"><span className="mr-1">⚠️</span> Traffic</span>
