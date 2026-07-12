@@ -97,6 +97,7 @@ const tripSchema = new mongoose.Schema(
   }
 );
 
+// ─── Virtual: Fuel Efficiency ─────────────────────────────────────────────────
 tripSchema.virtual("fuelEfficiency").get(function () {
   if (this.fuelConsumed && this.fuelConsumed > 0 && this.actualDistance) {
     return parseFloat((this.actualDistance / this.fuelConsumed).toFixed(2));
@@ -104,6 +105,7 @@ tripSchema.virtual("fuelEfficiency").get(function () {
   return null;
 });
 
+// ─── Pre-save: Auto-generate trip number ──────────────────────────────────────
 tripSchema.pre("save", async function (next) {
   if (!this.tripNumber) {
     const count = await mongoose.model("Trip").countDocuments();
@@ -112,6 +114,7 @@ tripSchema.pre("save", async function (next) {
   next();
 });
 
+// ─── Indexes ──────────────────────────────────────────────────────────────────
 tripSchema.index({ status: 1 });
 tripSchema.index({ vehicle: 1 });
 tripSchema.index({ driver: 1 });

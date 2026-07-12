@@ -49,6 +49,7 @@ const expenseSchema = new mongoose.Schema(
   }
 );
 
+// ─── Indexes ──────────────────────────────────────────────────────────────────
 expenseSchema.index({ vehicle: 1 });
 expenseSchema.index({ type: 1 });
 expenseSchema.index({ date: -1 });

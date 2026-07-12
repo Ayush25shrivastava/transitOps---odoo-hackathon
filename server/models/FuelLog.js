@@ -55,6 +55,7 @@ const fuelLogSchema = new mongoose.Schema(
   }
 );
 
+// ─── Pre-save: Compute costPerLiter if not provided ───────────────────────────
 fuelLogSchema.pre("save", function (next) {
   if (this.liters && this.totalCost && !this.costPerLiter) {
     this.costPerLiter = parseFloat((this.totalCost / this.liters).toFixed(4));
@@ -62,6 +63,7 @@ fuelLogSchema.pre("save", function (next) {
   next();
 });
 
+// ─── Indexes ──────────────────────────────────────────────────────────────────
 fuelLogSchema.index({ vehicle: 1 });
 fuelLogSchema.index({ date: -1 });
 fuelLogSchema.index({ trip: 1 });

@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Password is required"],
       minlength: [6, "Password must be at least 6 characters"],
-      select: false,
+      select: false, // never return password in queries by default
     },
     role: {
       type: String,
@@ -46,6 +46,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// ─── Pre-save: Hash password ──────────────────────────────────────────────────
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   const salt = await bcrypt.genSalt(12);
@@ -53,10 +54,12 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// ─── Method: Compare entered password ─────────────────────────────────────────
 userSchema.methods.comparePassword = async function (enteredPassword) {
   return bcrypt.compare(enteredPassword, this.password);
 };
 
+// ─── Method: Generate JWT ──────────────────────────────────────────────────────
 userSchema.methods.generateJWT = function () {
   return jwt.sign(
     { id: this._id, role: this.role },
@@ -65,6 +68,7 @@ userSchema.methods.generateJWT = function () {
   );
 };
 
+// ─── Index ────────────────────────────────────────────────────────────────────
 userSchema.index({ email: 1 });
 
 const User = mongoose.model("User", userSchema);
