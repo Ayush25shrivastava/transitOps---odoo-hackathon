@@ -82,6 +82,7 @@ const maintenanceLogSchema = new mongoose.Schema(
   }
 );
 
+// ─── Virtual: Duration in days ────────────────────────────────────────────────
 maintenanceLogSchema.virtual("durationDays").get(function () {
   if (this.endDate) {
     const diff = this.endDate - this.startDate;
@@ -90,6 +91,7 @@ maintenanceLogSchema.virtual("durationDays").get(function () {
   return null;
 });
 
+// ─── Indexes ──────────────────────────────────────────────────────────────────
 maintenanceLogSchema.index({ vehicle: 1 });
 maintenanceLogSchema.index({ status: 1 });
 maintenanceLogSchema.index({ startDate: -1 });
