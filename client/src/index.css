@@ -2,30 +2,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-base: #F1F5F9;
-  --color-bg-sidebar: #FFFFFF;
-  --color-bg-card: #FFFFFF;
-  --color-border: #E2E8F0;
+  --color-bg-base: #121212;
+  --color-bg-sidebar: #1E1E1E;
+  --color-bg-card: #1E1E1E;
+  --color-border: #333333;
   
-  /* Vibrant Primary: Deep Indigo */
-  --color-primary: #4F46E5;
-  --color-primary-dark: #4338CA;
-  --color-primary-light: #EEF2FF;
+  /* Vibrant Primary for Dark Theme */
+  --color-primary: #6366F1;
+  --color-primary-dark: #4F46E5;
+  --color-primary-light: #3730A3;
   
   /* Vibrant Status Colors */
   --color-success: #10B981;
-  --color-success-light: #D1FAE5;
+  --color-success-light: #064E3B;
   --color-danger: #EF4444;
-  --color-danger-light: #FEE2E2;
+  --color-danger-light: #7F1D1D;
   --color-info: #3B82F6;
-  --color-info-light: #DBEAFE;
+  --color-info-light: #1E3A8A;
   --color-warning: #F59E0B;
-  --color-warning-light: #FEF3C7;
+  --color-warning-light: #78350F;
   
-  /* Text */
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #64748B;
-  --color-dark-panel: #0F172A;
+  /* Text for Dark Theme */
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+  --color-dark-panel: #1E1E1E;
   
   --font-sans: 'Inter', sans-serif;
 }
@@ -34,6 +34,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 body {
@@ -45,7 +49,26 @@ body {
 
 /* Global transitions for interactive elements */
 button, a, input, select, .interactive-card {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects and Animations */
+.hover-scale:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 ::-webkit-scrollbar {
@@ -54,14 +77,14 @@ button, a, input, select, .interactive-card {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-bg-base);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #4B5563;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #6B7280;
 }
